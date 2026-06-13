@@ -1,5 +1,5 @@
 # Cahier des charges — Projet 1 : Site web restaurant québécois
-> Portfolio freelance · Dev : Next.js 14 · Délai cible : 3–5 jours
+> Portfolio freelance · Dev : Next.js 14 · 
 
 ---
 
@@ -294,4 +294,4 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 ---
 
-*Cahier des charges rédigé pour usage portfolio freelance — Deangelis, développeur web & mobile Québec*
+*Cahier des charges rédigé pour usage portfolio freelance — Christin Negou, développeur web & mobile Québec*

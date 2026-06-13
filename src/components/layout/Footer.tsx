@@ -133,7 +133,7 @@ export default function Footer() {
               href="#"
               className="text-[#C9A84C] hover:underline"
             >
-              Deangelis — Développeur web & mobile Québec
+              Christin Negou — Développeur web & mobile Québec
             </a>
           </p>
         </div>
