@@ -3,6 +3,11 @@
 Site web complet pour une brasserie artisanale fictive à Trois-Rivières, Québec.
 Réalisé comme pièce maîtresse de portfolio freelance.
 
+## Démo en ligne
+
+**URL :** [https://clinique-de-physiotherapie.vercel.app](https://le-boeuf-biere.vercel.app)
+
+
 ## Stack technique
 
 | Couche | Technologie |
