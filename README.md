@@ -5,7 +5,7 @@ Réalisé comme pièce maîtresse de portfolio freelance.
 
 ## Démo en ligne
 
-**URL :** [https://clinique-de-physiotherapie.vercel.app](https://le-boeuf-biere.vercel.app)
+**URL :** https://le-boeuf-biere.vercel.app
 
 
 ## Stack technique
