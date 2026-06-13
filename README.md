@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Le Bœuf & Bière — Site web restaurant
 
-## Getting Started
+Site web complet pour une brasserie artisanale fictive à Trois-Rivières, Québec.
+Réalisé comme pièce maîtresse de portfolio freelance.
 
-First, run the development server:
+## Stack technique
+
+| Couche | Technologie |
+|--------|-------------|
+| Framework | Next.js 16 (App Router) |
+| Styling | Tailwind CSS 4 |
+| Base de données | Supabase (PostgreSQL) |
+| Emails | Resend |
+| Déploiement | Vercel |
+| Langue | TypeScript 5 |
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Accueil — Hero, histoire, spécialités, réservation rapide, avis |
+| `/menu` | Menu filtrable par catégorie et régimes alimentaires |
+| `/reservation` | Formulaire complet avec calendrier react-day-picker |
+| `/a-propos` | Histoire, équipe, valeurs, presse |
+| `/contact` | Carte, horaires, formulaire de contact |
+
+## Installation
 
 ```bash
+# Cloner le dépôt
+git clone <url>
+cd projet1
+
+# Installer les dépendances
+npm install
+
+# Copier et remplir les variables d'environnement
+cp .env.local.example .env.local
+# Remplir NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, RESEND_API_KEY
+
+# Lancer en développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuration Supabase
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Créer un projet sur [supabase.com](https://supabase.com)
+2. Copier l'URL et la clé anon dans `.env.local`
+3. Exécuter le fichier `supabase-schema.sql` dans l'éditeur SQL Supabase
+   — il crée les tables et insère les données de démonstration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration Resend (emails)
 
-## Learn More
+1. Créer un compte sur [resend.com](https://resend.com)
+2. Créer une clé API
+3. L'ajouter dans `.env.local` sous `RESEND_API_KEY`
 
-To learn more about Next.js, take a look at the following resources:
+> Sans ces clés, le site fonctionne entièrement avec les données de démonstration locales.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Déploiement Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Installer la CLI Vercel
+npm i -g vercel
 
-## Deploy on Vercel
+# Déployer
+vercel --prod
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ajouter les variables d'environnement dans le dashboard Vercel (Settings → Environment Variables).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Structure des fichiers
+
+```
+src/
+├── app/
+│   ├── layout.tsx            # Layout global + SEO JSON-LD
+│   ├── page.tsx              # Page d'accueil
+│   ├── menu/page.tsx         # Page menu
+│   ├── reservation/page.tsx  # Page réservation
+│   ├── a-propos/page.tsx     # Page à propos
+│   ├── contact/page.tsx      # Page contact
+│   └── api/
+│       ├── reservation/route.ts
+│       └── contact/route.ts
+├── components/
+│   ├── layout/               # Navbar, Footer, MobileMenu
+│   ├── home/                 # Hero, Story, Specialties, QuickReservation, Testimonials
+│   ├── menu/                 # MenuGrid, MenuFilters, MenuItemCard
+│   ├── reservation/          # ReservationForm
+│   ├── contact/              # ContactForm
+│   └── ui/                   # Button, Badge, StarRating
+└── lib/
+    ├── supabase.ts
+    ├── types.ts
+    └── demo-data.ts          # Données de démo (sans Supabase)
+```
+
+---
+
+*Portfolio freelance — Deangelis, développeur web & mobile Québec*
