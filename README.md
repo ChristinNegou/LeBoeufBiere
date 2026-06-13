@@ -98,4 +98,4 @@ src/
 
 ---
 
-*Portfolio freelance — Deangelis, développeur web & mobile Québec*
+*Portfolio freelance — Christin Negou, développeur web & mobile Québec*
