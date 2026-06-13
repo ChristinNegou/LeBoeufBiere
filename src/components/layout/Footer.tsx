@@ -130,7 +130,7 @@ export default function Footer() {
           <p>
             Site créé par{" "}
             <a
-              href="#"
+              href="https://github.com/ChristinNegou"
               className="text-[#C9A84C] hover:underline"
             >
               Christin Negou — Développeur web & mobile Québec
